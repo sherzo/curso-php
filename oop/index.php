@@ -1,43 +1,18 @@
 <?php 
 
- /**
- * 
- */
- class Car 
- {
- 	public function __construct($owner)
- 	{
- 		$this->owner = $owner;
- 	}
+include 'vehicles/Car.php';
+include 'vehicles/Truck.php';
 
- 	public function __destruct()
- 	{
- 		echo "Destruct <br>";
- 	}
+use Vehicles\{Car, Truck};
 
- 	private $owner;
-
- 	public function move(){
- 		echo "Moving <br>";
- 	}
-
- 	public function getOwner()
- 	{
- 		return $this->owner;
- 	}
-
- 	public function setOwner($owner)
- 	{
- 		$this->owner = $owner;
- 	}
- }
-
-echo "Class Car <br><br>";
-
+echo "Class Car<br>";
 $car = new Car('Alex');
-$car2 = new Car('Max');
-
 $car->move();
-
 echo "Owner: " . $car->getOwner() . '<br>';
-echo "Owner2: " . $car2->getOwner();
+
+echo "<br>Class Truck<br>";
+$truck = new Truck('Max', 'Pickup');
+$truck->move();
+echo "Owner truck: " . $truck->getOwner();
+
+
