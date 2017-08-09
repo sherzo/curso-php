@@ -7,16 +7,18 @@ namespace Vehicles;
  *  Clase de Vehicles
  */
 
- class VehicleBase
+ abstract class VehicleBase
  {
  	protected $owner;
  	
  	public function __construct($owner)
  	{
  		$this->owner = $owner;
+ 		echo 'construct <br>';
  	}
 
  	public function move(){
+ 		echo $this->startEngine() . '<br>';
  		echo "Moving <br>";
  	}
 
@@ -29,4 +31,6 @@ namespace Vehicles;
  	{
  		$this->owner = $owner;
  	}
+
+ 	public abstract function startEngine();
  }
