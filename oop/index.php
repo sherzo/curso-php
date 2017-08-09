@@ -20,8 +20,7 @@ try {
 echo "Class Car<br>";
 $car = new Car('Alex');
 $car->move();
-echo "Owner car: " . $car->getOwner() .'<br>';
-
+echo 'GPS pos: ' . $car->getPos();
 
 echo "<br>Class Truck 1 <br>";
 $truck = new Truck('Max', 'Pickup');
