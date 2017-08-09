@@ -19,7 +19,7 @@ class Car extends VehicleBase implements \Serializable {
  	public function serialize()
  	{
  		echo 'Serialize <br>';
- 		echo $this->owner;
+ 		return $this->owner;
  	}
 
  	public function unserialize($serialized)
