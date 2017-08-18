@@ -15,6 +15,9 @@
 			<li>
 				<a href="add.php">Add users</a>
 			</li>
+			<li>
+				<a href="fake-login.php">Fake login</a>
+			</li>
 		</ul>
 	</div>
 </body>
