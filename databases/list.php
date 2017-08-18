@@ -22,6 +22,7 @@
 				<th>Name</th>
 				<th>Email</th>
 				<th>Edit</th>
+				<th>Delete</th>
 			</tr>
 			<tr>
 				<?php 
@@ -31,6 +32,7 @@
 						echo '<td>' . $row['name'] . '</td>';
 						echo '<td>' . $row['email'] . '</td>';
 						echo '<td><a href="update.php?id='. $row['id'] .'">Edit</a></td>';
+						echo '<td><a href="delete.php?id='. $row['id'] .'">Delete</a></td>';
 						echo '</tr>';
 					}
 				?>
