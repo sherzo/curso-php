@@ -1,5 +1,5 @@
 <?php 
-	include_once 'config.php';
+	include_once '../config.php';
 
 	$query = $pdo->prepare('SELECT * FROM blog_posts ORDER BY id DESC');
 	$query->execute();
@@ -23,22 +23,29 @@
 		</div>
 		<div class="row">
 			<div class="col-md-8">
-				<?php
-
-				foreach ($blogPosts as $blogPost) {
-					echo '<div class="blog-post">';
-					echo '<h2>'. $blogPost['title'] .'</h2>';
-					echo '<p>Jan 1, 2020 by <a href="">Alex</a></p>';
-					echo '<div class="blos-post-image">';
-					echo '<img src="images/keyboard.jpg" alt="" class="img-fluid">';
-					echo '</div>';
-					echo '<div class="blog-post-content">';
-					echo $blogPost['content'];
-					echo '</div>';
-					echo '</div>';
-				}
-
-				?>
+				<h2>Posts</h2>
+				<a class="btn btn-primary" href="insert-post.php">New Post</a>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+							foreach ($blogPosts as $blogPost) {
+								echo '<tr>';
+								echo '<td>' . $blogPost['title']. '</td>';
+								echo '<td><a href="">Edit</a></td>';
+								echo '<td><a href="">Delete</a></td>';
+								echo '</tr>';
+							}
+						?>
+					</tbody>
+				
+				</table>
 			</div>
 			<div class="col-md-4">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illum iste explicabo officiis. At nemo quia molestias hic, nulla, optio beatae, perspiciatis cum eveniet deserunt voluptatum enim praesentium reiciendis ducimus!
