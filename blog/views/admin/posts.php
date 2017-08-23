@@ -14,11 +14,29 @@
 		</div>
 		<div class="row">
 			<div class="col-md-8">
-				<ul>
-					<li>
-						<a href="posts.php">Manage post</a>
-					</li>
-				</ul>
+				<h2>Posts</h2>
+				<a class="btn btn-primary" href="<?php echo BASE_URL; ?>admin/posts/create">New Post</a>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Edit</th>
+							<th>Delete</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+							foreach ($blogPosts as $blogPost) {
+								echo '<tr>';
+								echo '<td>' . $blogPost['title']. '</td>';
+								echo '<td><a href="">Edit</a></td>';
+								echo '<td><a href="">Delete</a></td>';
+								echo '</tr>';
+							}
+						?>
+					</tbody>
+				
+				</table>
 			</div>
 			<div class="col-md-4">
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi, illum iste explicabo officiis. At nemo quia molestias hic, nulla, optio beatae, perspiciatis cum eveniet deserunt voluptatum enim praesentium reiciendis ducimus!
@@ -28,7 +46,7 @@
 			<div class="col-md-12">			
 				<footer>
 					This is a footer<br>
-					<a href="/admin/index.php">Admin panel</a>
+					<a href="<?php echo BASE_URL; ?>admin">Admin panel</a>
 				</footer>
 			</div>
 		</div>
