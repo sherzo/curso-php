@@ -6,6 +6,8 @@
 	},
 	"require": {
 		"phroute/phroute": "^2.1",
-		"twig/twig": "^2.4"
+		"twig/twig": "^2.4",
+		"illuminate/database": "^5.4",
+		"vlucas/phpdotenv": "^2.4"
 	}
 }
