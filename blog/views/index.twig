@@ -1,0 +1,16 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	{% for blogPost in blogPosts %}
+		<div class="blog-post">
+			<h2>{{ blogPost.title }}</h2>
+			<p>Jan 1, 2020 by <a href="">Alex</a></p>
+			<div class="blos-post-image">
+				<img src="images/keyboard.jpg" alt="" class="img-fluid">
+				<div class="blog-post-content">
+				{{ blogPost.content }}
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+{% endblock %}
