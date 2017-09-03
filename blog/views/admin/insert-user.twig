@@ -4,15 +4,7 @@
 	<h2>New User</h2>
 	<a class="btn btn-outline-secondary" href="{{ 'admin/users' | url }}">Back</a>
 	{% if errors %} <!-- Twig vefica si es un arreglo que no este vacío-->
-		<div class="alert alert-danger mt-3">
-			<ul>
-				{% for input, messages in errors %}
-					{% for message in messages %}
-						<li>{{ input }}: {{ message }}</li>
-					{% endfor %}
-				{% endfor %}
-			</ul>			
-		</div>
+		{% include('partials/errors.twig') %}
 	{% endif %}
 	{% if result %}
 		<div class="alert alert-success mt-3">User saved!</div>
