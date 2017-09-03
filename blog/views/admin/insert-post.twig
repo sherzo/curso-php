@@ -3,9 +3,21 @@
 {% block content %}
 	<h2>New Post</h2>
 	<a class="btn btn-outline-secondary" href="{{ 'admin/posts' | url }}">Back</a>
+	{% if errors %} <!-- Twig vefica si es un arreglo que no este vacío-->
+		<div class="alert alert-danger">
+			<ul>
+				{% for input, messages in errors %}
+					{% for message in messages %}
+						<li>{{ input }}: {{ message }}</li>
+					{% endfor %}
+				{% endfor %}
+			</ul>			
+		</div>
+	{% endif %}
 	{% if result %}
 		<div class="alert alert-success">Suceess!!</div>
 	{% endif %}
+
 	<form method="post">
 		<div class="form-group">
 			<label for="inputTItle">Title</label>

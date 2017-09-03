@@ -1,4 +1,7 @@
 <?php
+/*   
+ * Este archivo ya no se esta utilizando 
+*/
 	$dbHost = 'localhost';
 	$dbName = 'cursophp';
 	$dbUser = 'root';
