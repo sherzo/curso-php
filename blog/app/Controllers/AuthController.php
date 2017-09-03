@@ -25,7 +25,7 @@ class AuthController extends BaseController {
 			if($user) {
 				if(password_verify($_POST['password'], $user->password)){
 
-					$_SESSION['usersId'] = $user->id;
+					$_SESSION['userId'] = $user->id;
 					header('Location:' . BASE_URL . 'admin');
 
 				}
@@ -39,5 +39,12 @@ class AuthController extends BaseController {
 		return $this->render('login.twig', [
 			'errors' => $errors,
 		]);
+	}
+
+	public function getLogout()
+	{
+		unset($_SESSION['userId']);
+
+		header('Location:' . BASE_URL . 'auth/login');
 	}
 }
