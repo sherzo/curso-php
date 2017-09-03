@@ -1,0 +1,36 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	<h2>New User</h2>
+	<a class="btn btn-outline-secondary" href="{{ 'admin/users' | url }}">Back</a>
+	{% if errors %} <!-- Twig vefica si es un arreglo que no este vacío-->
+		<div class="alert alert-danger mt-3">
+			<ul>
+				{% for input, messages in errors %}
+					{% for message in messages %}
+						<li>{{ input }}: {{ message }}</li>
+					{% endfor %}
+				{% endfor %}
+			</ul>			
+		</div>
+	{% endif %}
+	{% if result %}
+		<div class="alert alert-success mt-3">User saved!</div>
+	{% endif %}
+
+	<form method="post">
+		<div class="form-group">
+			<label for="inputName">Name</label>
+			<input class="form-control" type="text" name="name" id="inputName">
+		</div>
+		<div class="form-group">
+			<label for="inputEmail">Email</label>
+			<input class="form-control" type="text" name="email" id="inputEmail">
+		</div>
+		<div class="form-group">
+			<label for="inputPassword">Password</label>
+			<input class="form-control" type="password" name="password" id="inputPassword">
+		</div>
+		<input class="btn btn-primary mt-3" type="submit" value="Save">
+	</form>
+{% endblock %}

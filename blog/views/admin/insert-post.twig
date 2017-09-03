@@ -4,7 +4,7 @@
 	<h2>New Post</h2>
 	<a class="btn btn-outline-secondary" href="{{ 'admin/posts' | url }}">Back</a>
 	{% if errors %} <!-- Twig vefica si es un arreglo que no este vacío-->
-		<div class="alert alert-danger">
+		<div class="alert alert-danger mt-2">
 			<ul>
 				{% for input, messages in errors %}
 					{% for message in messages %}
@@ -15,12 +15,12 @@
 		</div>
 	{% endif %}
 	{% if result %}
-		<div class="alert alert-success">Suceess!!</div>
+		<div class="alert alert-success mt-2">Post Saved!</div>
 	{% endif %}
 
 	<form method="post">
 		<div class="form-group">
-			<label for="inputTItle">Title</label>
+			<label for="inputTitle">Title</label>
 			<input class="form-control" type="text" name="title" id="inputTitle">
 		</div>
 		<textarea class="form-control" name="content" id="content" rows="5"></textarea>
