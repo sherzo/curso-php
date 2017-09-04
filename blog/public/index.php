@@ -34,6 +34,10 @@ $capsule->bootEloquent();
 
 $route = $_GET['route'] ?? '/';
 
+use Phroute\Phroute\RouteCollector;
+
+$router = new RouteCollector();
+
 $router->filter('auth', function () {
    if (!isset($_SESSION['userId'])) {
        header('Location: ' . BASE_URL . 'auth/login');
