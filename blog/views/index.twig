@@ -5,8 +5,10 @@
 		<div class="blog-post mt-3">
 			<h2>{{ blogPost.title }}</h2>
 			<p>Jan 1, 2020 by <a href="" >Alex</a></p>
-			<div class="blos-post-image">
-				<img src="images/keyboard.jpg" alt="" class="img-fluid">
+			<div class="blog-post-image">
+				{% if blogPost.img_url %}
+					<img src="{{ blogPost.img_url }}">
+				{% endif %}
 				<div class="blog-post-content mt-2">
 				{{ blogPost.content }}
 				</div>
