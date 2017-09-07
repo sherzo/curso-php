@@ -698,7 +698,7 @@
         "require-dev": {
             "phpunit/phpunit": "^3.7"
         },
-        "time": "2017-03-07 16:35:59",
+        "time": "2017-03-07T16:35:59+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -853,5 +853,7 @@
             "logging",
             "psr-3"
         ]
+=======
+>>>>>>> 58149d8220e5fdd0a661bc55bb358b10abf55d10
     }
 ]

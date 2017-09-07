@@ -3,14 +3,24 @@
 {% block content %}
 	<h2>New Post</h2>
 	<a class="btn btn-outline-secondary" href="{{ 'admin/posts' | url }}">Back</a>
-	{% if result %}
-		<div class="alert alert-success">Suceess!!</div>
+	{% if errors %} <!-- Twig vefica si es un arreglo que no este vacío-->
+		{% include('partials/errors.twig') %}
 	{% endif %}
+	{% if result %}
+		<div class="alert alert-success mt-2">Post Saved!</div>
+	{% endif %}
+
 	<form method="post">
 		<div class="form-group">
-			<label for="inputTItle">Title</label>
+			<label for="inputTitle">Title</label>
 			<input class="form-control" type="text" name="title" id="inputTitle">
 		</div>
+
+		<div class="form-group">
+			<label for="inputImg">Image</label>
+			<input class="form-control" type="text" name="img" id="inputImg">
+		</div>
+
 		<textarea class="form-control" name="content" id="content" rows="5"></textarea>
 		<br>
 		<input class="btn btn-primary" type="submit" value="Save">

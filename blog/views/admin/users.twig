@@ -1,25 +1,27 @@
 {% extends 'layout.twig' %}
 
 {% block content %}
-	<h2>Posts</h2>
-	<a class="btn btn-primary" href="{{ 'admin/posts/create' | url }}">New Post</a>
+	<h2>Users</h2>
+	<a class="btn btn-primary" href="{{ 'admin/users/create' | url }}">New Users</a>
 	<table class="table mt-3">
 		<thead>
 			<tr>
-				<th>Title</th>
+				<th>Name</th>
+				<th>Email</th>
 				<th>Edit</th>
 				<th>Delete</th>
 			</tr>
 		</thead>
 		<tbody>
-			{% for blogPost in blogPosts %}
+			{% for user in users %}
 				<tr>
-					<td>{{ blogPost.title }}</td>
+					<td>{{ user.name }}</td>
+					<td>{{ user.email }}</td>
 					<td>Edit</td>
 					<td>Delete</td>	
 				</tr>
 			{% endfor %}
 		</tbody>
 	
-	</table>	
+	</table>
 {% endblock %}
