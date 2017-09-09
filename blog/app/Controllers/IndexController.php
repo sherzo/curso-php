@@ -12,4 +12,16 @@ class IndexController extends BaseController {
 
 		return $this->render('index.twig', ['blogPosts' => $blogPosts]);
 	}
+
+	public function getPost($postId)
+	{
+		$blogPost = BlogPost::find($postId);
+		if($blogPost){
+			return $this->render('post.twig',[
+				'blogPost' => $blogPost
+			]);
+		}else{
+			header('Location:' . BASE_URL . '/');
+		}
+	}
 }

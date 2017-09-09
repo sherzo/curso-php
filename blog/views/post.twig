@@ -1,0 +1,17 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+	<a class="btn btn-outline-secondary" href="{{ '' | url }}">Back</a>
+	<div class="blog-post mt-3">
+		<h2>{{ blogPost.title }}</h2>
+		<p>Jan 1, 2020 by <a href="" >Alex</a></p>
+		<div class="blog-post-image">
+			{% if blogPost.img_url %}
+				<img src="{{ blogPost.img_url }}">
+			{% endif %}
+			<div class="blog-post-content mt-2">
+			{{ blogPost.content }}
+			</div>
+		</div>
+	</div>
+{% endblock %}

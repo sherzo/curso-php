@@ -3,7 +3,7 @@
 {% block content %}
 	{% for blogPost in blogPosts %}
 		<div class="blog-post mt-3">
-			<h2>{{ blogPost.title }}</h2>
+			<h2 class="blog-post-title"><a href="{{ 'post/' | url }}{{ blogPost.id }}">{{ blogPost.title }}</a></h2>
 			<p>Jan 1, 2020 by <a href="" >Alex</a></p>
 			<div class="blog-post-image">
 				{% if blogPost.img_url %}
