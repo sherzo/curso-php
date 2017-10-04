@@ -10,7 +10,7 @@
 		<div class="alert alert-success mt-2">Post Saved!</div>
 	{% endif %}
 
-	<form method="post">
+	<form method="post" onsubmit="return validateForm()">
 		<div class="form-group">
 			<label for="inputTitle">Title</label>
 			<input class="form-control" type="text" name="title" id="inputTitle">
@@ -25,4 +25,21 @@
 		<br>
 		<input class="btn btn-primary" type="submit" value="Save">
 	</form>
+{% endblock %}
+
+{% block js %}
+	<script>
+		function validateForm() {
+			var title = document.getElementById('inputTitle').value.trim();
+			if (title === '' ) {
+				swal(
+				  	'Oops...',
+				  	'Title is required',
+				  	'error'
+				);
+
+				return false;
+			}
+		}
+	</script>
 {% endblock %}
