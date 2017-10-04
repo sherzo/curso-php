@@ -19,7 +19,13 @@ class BaseController {
 		}));
 	}
 
-	public function render($fileName, $data = []){
+	public function render($fileName, $data = [])
+	{
 		return $this->templateEngine->render($fileName, $data);
+	}
+
+	public function paginate($page = 1)
+	{
+		
 	}
 }

@@ -6,9 +6,9 @@ use App\Models\BlogPost;
 
 class IndexController extends BaseController {
 
-	public function getIndex()
+	public function getIndex($page = 1)
 	{
-		$blogPosts = BlogPost::query()->orderBy('id', 'desc')->get();
+		$blogPosts = BlogPost::query()->orderBy('id', 'desc')->simplePaginate(2);
 
 		return $this->render('index.twig', ['blogPosts' => $blogPosts]);
 	}

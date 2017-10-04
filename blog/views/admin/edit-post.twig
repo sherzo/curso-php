@@ -11,17 +11,18 @@
 	{% endif %}
 
 	<form method="post">
+		<input type="hidden" name="postId" value="{{ blogPost.id }}">
 		<div class="form-group">
 			<label for="inputTitle">Title</label>
-			<input class="form-control" type="text" name="title" id="inputTitle">
+			<input class="form-control" type="text" name="title" id="inputTitle" value="{{ blogPost.title }}">
 		</div>
 
 		<div class="form-group">
 			<label for="inputImg">Image</label>
-			<input class="form-control" type="text" name="img" id="inputImg">
+			<input class="form-control" type="text" name="img" id="inputImg" value="{{ blogPost.img_url }}">
 		</div>
 
-		<textarea class="form-control" name="content" id="content" rows="5"></textarea>
+		<textarea class="form-control" name="content" id="content" rows="5">{{ blogPost.content }}</textarea>
 		<br>
 		<input class="btn btn-primary" type="submit" value="Save">
 	</form>

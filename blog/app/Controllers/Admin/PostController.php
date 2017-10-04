@@ -50,4 +50,52 @@ class PostController extends BaseController {
 			'errors' => $errors
 		]);	
 	}
+
+	public function getEdit($postId)
+	{
+		$blogPost = BlogPost::find($postId);
+
+		return $this->render('admin/edit-post.twig', ['blogPost' => $blogPost]);
+	}
+
+	public function postEdit($postId)
+	{
+		$errors = [];
+		$result = false;
+		
+		$blogPost = BlogPost::find($postId);
+
+		$validator = new Validator();
+		$validator->add('title', 'required');
+		$validator->add('content', 'required');
+
+		if($validator->validate($_POST)){
+			$blogPost->title = $_POST['title'];
+			$blogPost->content = $_POST['content'];
+
+			if($_POST['img']){
+				$blogPost->img_url = $_POST['img'];
+			}
+
+			$blogPost->save();
+			$result = true;
+		}else {
+			$errors = $validator->getMessages();
+		}
+
+		return $this->render('admin/edit-post.twig', [
+			'result' => $result,
+			'blogPost' => $blogPost, 
+			'errors' => $errors
+		]);
+	}
+
+	public function getDelete($postId)
+	{
+		$blogPost = BlogPost::find($postId);
+
+		$blogPost->delete();
+
+		header('Location:' . BASE_URL . 'admin/posts');	
+	}
 }

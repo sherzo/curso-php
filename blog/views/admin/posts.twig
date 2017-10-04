@@ -15,11 +15,10 @@
 			{% for blogPost in blogPosts %}
 				<tr>
 					<td>{{ blogPost.title }}</td>
-					<td>Edit</td>
-					<td>Delete</td>	
+					<td><a href="{{ 'admin/posts/edit/' | url }}{{ blogPost.id }}">Edit</a></td>
+					<td><a href="{{ 'admin/posts/delete/' | url }}{{ blogPost.id }}">Delete</a></td>
 				</tr>
 			{% endfor %}
 		</tbody>
-	
 	</table>	
 {% endblock %}
